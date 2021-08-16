@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-import formatDate from "./utils/format";
+import {formatDate} from "./utils";
 
 function Timer({format}) {
   const [currentDate, setCurrentDate] = useState(new Date());
