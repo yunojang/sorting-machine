@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import { formatDate } from "./utils";
 import styled from "styled-components";
 
-function Timer({ format, name }) {
+const DETAIL_MESSAGE = {
+  "ko-KR" : "자세히 보기",
+  "en-US" : "view detail",
+}
+
+function Timer({ format }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [isChecked, setIsChecked] = useState(false);
 
@@ -23,8 +28,10 @@ function Timer({ format, name }) {
     <Container>
       {formatDate(currentDate, format, isChecked)}
       <Check>
-        <input type="checkbox" checked={isChecked} onChange={handleCheck} />
-        <label>{name}</label>
+        <label>
+          <input type="checkbox" checked={isChecked} onChange={handleCheck} />
+          {DETAIL_MESSAGE[format]}
+        </label>
       </Check>
       <img src="images/alarm-clock.png" alt="clock" />
     </Container>
@@ -50,9 +57,10 @@ const Container = styled.div`
 
 const Check = styled.div`
   margin-top: 5px;
-  label {
-    font-size: 15px;
-    padding-left: 5px;
+  font-size: 15px;
+  user-select: none;
+  input {
+    margin-right: 5px;
   }
 `;
 

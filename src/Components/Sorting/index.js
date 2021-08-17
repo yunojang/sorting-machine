@@ -53,8 +53,6 @@ function Sorting() {
     }
   };
 
-  console.log(typeof result.asc);
-
   return (
     <Container>
       <SortingForm
