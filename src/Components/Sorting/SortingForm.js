@@ -6,14 +6,14 @@ function SortingForm(props) {
       <Input
         onChange={props.onChange}
         value={props.value}
-        type='text'
-        placeholder='"숫자,숫자,숫자.. 형식으로 입력하세요"'
+        type="text"
+        placeholder="숫자,숫자,숫자.. 형식으로 입력하세요"
       />
       <ErrorAlert hidden={!props.error}>{props.error?.message}</ErrorAlert>
 
-      <Submit type='submit' value='정렬하기' />
+      <Submit type="submit" value="정렬하기" />
     </Form>
-  )
+  );
 }
 
 export default SortingForm;
@@ -27,23 +27,41 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  height: 35px;
-  padding: 0 10px;
+  height: 50px;
+  padding: 0 20px;
+  margin-top: 15px;
   width: 100%;
+  border: 1px solid #d6d7da;
+  border-radius: 5px;
+  font-size: 16px;
+
+  ::placeholder {
+    color: #afb4b8;
+    font-size: 16px;
+  }
+  :focus {
+    outline: none;
+  }
 `;
 
 const Submit = styled.input`
+  margin-top: 30px;
   width: 200px;
   height: 50px;
   border: none;
-  background: #00aaff;
+  border-radius: 5px;
+  font-size: 17px;
+  background: #4487ff;
   color: #fff;
-  margin-top: 30px;
+
+  &:hover {
+    background: #1769ff;
+  }
 `;
 
 const ErrorAlert = styled.div`
-  background: #ff5555;
+  margin-top: 15px;
   width: 100%;
-  text-align: center;
-  color: white;
+  text-align: left;
+  color: #ee4649;
 `;
