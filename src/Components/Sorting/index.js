@@ -72,7 +72,7 @@ function Sorting() {
 }
 
 const Container = styled.div`
-  width: 550px;
+  width: 100%;
 `;
 
 const Title = styled.div`

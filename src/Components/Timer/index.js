@@ -26,7 +26,9 @@ function Timer({ format }) {
 
   return (
     <Container>
-      {formatDate(currentDate, format, isChecked)}
+      <span>
+        {formatDate(currentDate, format, isChecked)}
+      </span>
       <Check>
         <label>
           <input type="checkbox" checked={isChecked} onChange={handleCheck} />
@@ -41,19 +43,17 @@ function Timer({ format }) {
 const Container = styled.div`
   position: relative;
   margin: 30px 0;
-  min-width: 550px;
+  width: 100%;
   padding: 40px;
   background-color: #f6f7f9;
   border-radius: 10px;
   font-size: 20px;
-  z-index:-1;
 
   img {
     position: absolute;
     right: 50px;
     top: 25px;
     width: 80px;
-    z-index:-1;
   }
 `;
 

@@ -15,7 +15,7 @@ function App() {
 }
 
 const Container = styled.div`
-  width: 700px;
+  width: 590px;
   margin: auto;
   display: flex;
   flex-direction: column;
