@@ -8,8 +8,8 @@ import SortingForm from './SortingForm';
 
 function Sorting() {
   const [result, setResult] = useState({ asc: '', desc: '' });
-  const [input, onChange] = useInput('');
   const [error, setError] = useState(null);
+  const [input, onChange] = useInput('');
 
   const onSubmit = e => {
     e.preventDefault();
@@ -25,15 +25,16 @@ function Sorting() {
     const submitSuccess = () => {
       setError(null);
 
-      const array = input.split(',').map(item => Number(item));
-      const sortedArray = quickSort(array);
+      const numberArray = input.split(',').map(item => Number(item));
+
+      const sortedArray = quickSort(numberArray);
       const asc = sortedArray.join(',');
       const desc = sortedArray.reverse().join(',');
 
       settingResult({ asc, desc });
     }
 
-    const submitFailure = () => {
+    const submitFailure = error => {
       setError(error)
     }
 
@@ -45,7 +46,7 @@ function Sorting() {
       submitSuccess();
     }
     catch (error) {
-      submitFailure();
+      submitFailure(error);
     }
   }
 
