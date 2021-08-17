@@ -1,4 +1,4 @@
-import { verifiedInput } from "../Components/Sorting/utils/validate";
+import { verifiedInput } from "./Components/Sorting/utils/validate";
 
 describe('verifiedInput test', ()=> {
   test('1,2 is verified', () => {
