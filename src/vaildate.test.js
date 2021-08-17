@@ -21,6 +21,14 @@ describe('verifiedInput test', ()=> {
     expect(verifiedInput('1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1')).toBe(true);
   });
 
+  test('empty is not verified', () => {
+    expect(verifiedInput('')).toBe(false);
+  });
+
+  test(', is not verified', () => {
+    expect(verifiedInput(',')).toBe(false);
+  });
+
   test('abc is not verified', () => {
     expect(verifiedInput('abc')).toBe(false);
   });
