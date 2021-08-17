@@ -46,12 +46,14 @@ const Container = styled.div`
   background-color: #f6f7f9;
   border-radius: 10px;
   font-size: 20px;
+  z-index:-1;
 
   img {
     position: absolute;
     right: 50px;
     top: 25px;
     width: 80px;
+    z-index:-1;
   }
 `;
 
