@@ -1,12 +1,6 @@
-function debouncing(func, delay) {
-  let timerId = null;
-  
-  if (timerId) {
-    clearTimeout(timerId);
-  }
-  
-  timerId = setTimeout(func,delay);
+let timerId = null;
 
-  return (...args) => {
-  }
+export function debouncing(func, delay, ...args) {
+  clearInterval(timerId);
+  timerId = setTimeout(func.bind(null,...args),delay);
 }
