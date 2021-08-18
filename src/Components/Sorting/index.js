@@ -2,10 +2,18 @@ import useInput from "hooks/useInput";
 import { useState } from "react";
 import { verifiedInput } from "./utils/validate";
 import { quickSort } from "./utils/sort";
-import { debouncing } from "utils/delay";
 
 import SortingForm from "./SortingForm";
 import styled from "styled-components";
+
+let timerId = null;
+
+function debouncing(func, delay, ...args) {
+  clearInterval(timerId);
+  timerId = setTimeout(() => {
+    func(...args)
+  }, delay);
+}
 
 function Sorting() {
   const [result, setResult] = useState({ asc: "", desc: "" });
